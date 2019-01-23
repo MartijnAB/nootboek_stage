@@ -1,0 +1,145 @@
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix dcterms:  <http://purl.org/dc/terms/>
+
+select ?datasourceLit
+
+where {
+  ?mb dc:source ?datasourceLit .
+}
+
+#################################
+
+datasourceLit
+"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+
+"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+
+##############################################################################
+
+prefix wp:      <http://vocabularies.wikipathways.org/wp#>
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix dcterms:  <http://purl.org/dc/terms/>
+
+select ?mb ?datasourceLit
+
+where {
+  ?mb dc:source ?datasourceLit .
+}
+
+
+mb 	datasourceLit
+http://identifiers.org/cas/1022-31-7 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/cas/104404-17-3 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/cas/111-02-4 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/cas/120-72-9 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+
+http://identifiers.org/cas/706808-37-9 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/cas/83-43-2 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/cas/1053172-87-4 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/cas/90746-94-4 	"CAS"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/chebi/CHEBI:10362 	"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/chebi/CHEBI:10545 	"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/chebi/CHEBI:11814 	"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/chebi/CHEBI:13389 	"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+http://identifiers.org/chebi/CHEBI:13705 	"ChEBI"^^<http://www.w3.org/2001/XMLSchema#string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+compounds_name = " 2,4-dinitrophenol|2-nitrofluorene"
+
+           _id_  cellType  ...   timepointHr tissue
+0  003016108004  in vitro  ...          24.0  Liver
+1  003016108005  in vitro  ...          24.0  Liver
+2  003016111010  in vitro  ...          24.0  Liver
+3  003016111011  in vitro  ...          24.0  Liver
+
+[4 rows x 10 columns]
+
+
+compounds_name = ' paracetamol', 'acetominophen', 'methapyrilene', 'phenylbutazone', 'simvastatin', 'valproic acid'
+compounds_name = "|".join(compounds_name)
+
+           _id_  cellType  ...   timepointHr tissue
+0  003016020014  in vitro  ...          24.0  Liver
+1  003016020015  in vitro  ...          24.0  Liver
+2  003016014002  in vitro  ...          24.0  Liver
+3  003016014003  in vitro  ...          24.0  Liver
+4  003016079002  in vitro  ...          24.0  Liver
+5  003016079003  in vitro  ...          24.0  Liver
+6  003016038010  in vitro  ...          24.0  Liver
+7  003016038011  in vitro  ...          24.0  Liver
+
+[8 rows x 10 columns]
+
+
+for names in cas_wikidata.values():
+    compounds_name += '|'+ names[1]
+
+
+
+Empty DataFrame
+Columns: []
+Index: []
+
+
+----------------------------------------------
+ offset(self): return None
+ limit(self): return None
+ query(self): return None
+ -----------------------------------------
+
+
+
+
+
+
+ ----------------------------------------------------------
+
+ --------------------------------------------------------------------
+
+
+-------------------------------------------------------------------
+chid_filter
+clib_filter
+dss_tox_q_c_level_filter
+substances_type_filter
+-------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------
+result_id_filter
+chid__filter
+clib_filter
+dss_tox_q_c_l_filter
+substance_type_filter
+
+
+hitc_filter
+-------------------------------------------------------------------------------------
