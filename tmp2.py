@@ -164,9 +164,9 @@ class ChemicalCompound():
 
     def addwikidataowntrivialname(self, the_trivial_name):
         self._add(self._wikidata_own_trivial_name, the_trivial_name)
-        self._wikidata_own_trivial_name =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+        self._wikidata_own_trivial_name = the_trivial_name
 
-    def getwikidataowntrivialname(self): return self._get("trivialnames", self._trivial_names)
+    def getwikidataowntrivialname(self): return self._get("trivialnames", self._wikidata_own_trivial_name)
 
 class StoredChemicalCompounds():
 
@@ -333,5 +333,8 @@ print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
 the_compounds.selectbycas("testen").addtrivialnames(["adfsdf", "sdfjklasdjklsdfjkl"])
 print(the_compounds.selectbycas("testen").gettrivialnames())
+the_compounds.selectbycas("testen").addwikidataowntrivialname("eigen trivale naam")
+print(the_compounds.selectbycas("testen").getwikidataowntrivialname())
+# print(the_compounds.selectbycas(2).gettrivialnames())
 
 

@@ -64,6 +64,7 @@ class ChemicalCompound():
         self._wikidata = None
 
         self._trivial_names = set()
+        self._wikidata_own_trivial_name = None
 
         self._is_chemicalcompound = False
 
@@ -122,6 +123,12 @@ class ChemicalCompound():
         self._trivial_names.update(the_trivial_names)
 
     def gettrivialnames(self): return self._get("trivialnames", self._trivial_names)
+
+    def addwikidataowntrivialname(self, the_trivial_name):
+        self._add(self._wikidata_own_trivial_name, the_trivial_name)
+        self._wikidata_own_trivial_name = the_trivial_name
+
+    def getwikidataowntrivialname(self): return self._get("trivialnames", self._wikidata_own_trivial_name)
 
 class StoredChemicalCompounds():
 
@@ -205,16 +212,21 @@ results = sparql.query().convert()
 print(results)
 # exit()
 for result in results["results"]["bindings"]:
-    print(result)
-    print(result['CAS_nummer'])
+    # print(result)
+    # print(result['CAS_nummer'])
+    # # exit()
+    # print([result['itemLabel']['value']])
+    # print([result['trivial_names']['value'].split("| |")])
+
     # exit()
-    print([result['itemLabel']['value']])
-    print([result['trivial_names']['value'].split("| |")])
-    exit()
     # cas_wikidata[result['CAS_nummer']['value']] += [result['itemLabel']['value']]
     # cas_wikidata[result['CAS_nummer']['value']] += [result['trivial_names']['value'].split("| |")]
-    # the_compounds.selectbycas([result['CAS_nummer']['value']).addtrivialnames([result['itemLabel']['value']]
+    the_compounds.selectbycas(result['CAS_nummer']['value']).addwikidataowntrivialname(result['itemLabel']['value'])
+    the_compounds.selectbycas(result['CAS_nummer']['value']).addtrivialnames(result['trivial_names']['value'].split("| |"))
     # cas_wikidata[result['CAS_nummer']['value']] += [result['trivial_names']['value'].split("| |")]
+
+for compound in the_compounds:
+    print(compound.getcas() + "  " + compound.getwikidata() + "   " + compound.getwikidataowntrivialname())
 
 exit()
 print("###############################################################################################################")
