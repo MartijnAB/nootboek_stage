@@ -164,7 +164,7 @@ class ChemicalCompound():
 
     def addwikidataowntrivialname(self, the_trivial_name):
         self._add(self._wikidata_own_trivial_name, the_trivial_name)
-        self._wikidata_own_trivial_name =
+        self._wikidata_own_trivial_name =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
     def getwikidataowntrivialname(self): return self._get("trivialnames", self._trivial_names)
 
